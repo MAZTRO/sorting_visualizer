@@ -3,37 +3,185 @@
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --color-darkPurple: #0c001d;
+  --color-lightPurple: #9400FF;
+  --color-lightPurple30: #9400FF33;
+  --color-midBlue: #AED2FF;
+  --color-lightBlue: #E4F1FF;
+  --color-orange: #e27713;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  outline: none;
+  color: var(--color-midBlue);
 }
 
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* ====================== CUSTOM SELECT ======================= */
+
+header [class^="algorithm"] {
+  width: 300px;
+  margin: auto;
+}
+
+header div[class$="-control"] {
+  background-color: var(--color-lightPurple);
+  border-radius: 10px;
+  border: 1px solid var(--color-lightPurple);
+  outline: none !important;
+  box-shadow: none;
+
+  color: var(--color-midBlue);
+  font-weight: 600;
+  font-size: 1em;
+
+  cursor: pointer;
+}
+
+header div[class$="-control"] {
+  border-color: var(--color-darkPurple) !important;
+}
+
+header div[class$="-control"] div[class$="-ValueContainer"] {
+  padding: 0em 1%;
+}
+
+header div[class$="-control"] div[class$="-singleValue"] {
+  color: var(--color-lightBlue);
+}
+
+header div[class$="-control"] div[class$="-placeholder"] {
+  font-weight: 600;
+  color: var(--color-midBlue);
+}
+
+header div[class$="-indicatorContainer"] {
+  cursor: pointer;
+}
+
+/* ================================== */
+
+header div[class$="-menu"] {
+  margin: 1px auto;
+  padding: 10px 5px;
+
+  background-color: var(--color-darkPurple);
+  border: 1px solid var(--color-lightPurple);
+  border-radius: 10px;
+  color: var(--color-midBlue);
+  font-weight: 600;
+}
+
+/* ========================================================= */
+
+
+input.rangeInput {
+  --c: var(--color-lightPurple); /* active color */
+  --g: 5px; /* the gap */
+  --l: 3px; /* line thickness*/
+  --s: 15px; /* thumb size*/
+
+  height: var(--s); /* needed for Firefox*/
+  --_c: color-mix(in srgb, var(--c), #000 var(--p,0%));
+  -webkit-appearance :none;
+  -moz-appearance :none;
+  appearance :none;
+  background: none;
+  cursor: grab;
+  overflow: hidden;
+}
+input.rangeInput:focus-visible,
+input.rangeInput:hover{
+  --p: 5%;
+}
+
+input.rangeInput:active,
+input.rangeInput:focus-visible{
+  --_b: var(--s)
+}
+/* chromium */
+input.rangeInput[type="range"]::-webkit-slider-thumb{
+  height: var(--s);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0 0 0 var(--_b,var(--l)) inset var(--_c);
+  border-image: linear-gradient(90deg,var(--_c) 50%, var(--color-midBlue) 0) 0 1/calc(50% - var(--l)/2) 100vw/0 calc(100vw + var(--g));
+  -webkit-appearance: none;
+  appearance: none;
+  transition: .15s;
+}
+/* Firefox */
+input.rangeInput[type="range"]::-moz-range-thumb {
+  height: var(--s);
+  width: var(--s);
+  background: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 var(--_b,var(--l)) inset var(--_c);
+  border-image: linear-gradient(90deg,var(--_c) 50%,var(--color-midBlue) 0) 0 1/calc(50% - var(--l)/2) 100vw/0 calc(100vw + var(--g));
+  -moz-appearance: none;
+  appearance: none;
+  transition: .15s;
+}
+
+/* =================================================== */
+
+/* ------------------------------------------------ */
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: linear-gradient(270deg,transparent 45%, var(--color-lightPurple) 50%, transparent 65%);
+}
+
+*::-webkit-scrollbar-thumb {
+  width: 14px;
+  background: var(--color-lightPurple);
+  border-radius: 20px;
+}
+
+/* ===================================== */
+
+.default-line-color {
+  background-color: var(--color-lightPurple);
+}
+
+.change-line-color {
+  background-color: var(--color-orange);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
   }
-  a:hover {
-    color: #747bff;
+  50% {
+    opacity: 0.5;
   }
-  button {
-    background-color: #f9f9f9;
-  }
+}
+
+.pulse-animation {
+  animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
