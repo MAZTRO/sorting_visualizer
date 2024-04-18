@@ -12,7 +12,6 @@ export default defineConfig({
   },
   build: {
     outDir: './build/dist',
-    minify: 'terser',
     emptyOutDir: true
   },
   plugins: [react()],
