@@ -11,7 +11,6 @@ export default defineConfig({
     port: 10080
   },
   build: {
-    outDir: './dist',
     emptyOutDir: true
   },
   plugins: [react()],
