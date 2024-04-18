@@ -1,23 +1,27 @@
 import { create } from 'zustand'
+import { MIN_SIZE, MIN_SPEED, MAX_SIZE } from 'src/utils/utils'
 import { settingsStore, barsContSize, AlgorithmOptions } from 'src/utils/types'
-import { MIN_SIZE, MIN_SPEED } from 'src/utils/utils'
 
 export const useSettingsStore = create<settingsStore>((set) => ({
-  arrayToSort: [],
-  isSorting: false,
-  animationComplete: false,
-  selectedAlgorithm: { value: 'NA', label: 'NA' },
-  speed: MIN_SPEED,
   size: MIN_SIZE,
+  speed: MIN_SPEED,
+  maxSize: MAX_SIZE,
   barWidth: 0,
+  openInfo: true,
   barHeight: 0,
+  isSorting: false,
+  arrayToSort: [],
   barsContSize: { x: 0, y: 0 },
-  changeSpeed: (data: number) => set(() => ({ speed: data })),
+  animationComplete: false,
+  selectedAlgorithm: { value: 'merge', label: 'Merge Sort' },
   changeSize: (data: number) => set(() => ({ size: data })),
-  changeBarsContSize: (data: barsContSize) => set(() => ({ barsContSize: data })),
-  changeArrayToSort: (data: number[]) => set(() => ({ arrayToSort: data })),
-  setIsAnimationComplete: (data: boolean) => set(() => ({ animationComplete: data })),
+  changeSpeed: (data: number) => set(() => ({ speed: data })),
   setIsSorting: (data: boolean) => set(() => ({ isSorting: data })),
+  changeMaxSize: (data: number) => set(() => ({ maxSize: data })),
   changeBarWidth: (data: number) => set(() => ({ barWidth: data })),
+  changeOpneInfo: (data: boolean) => set(() => ({ openInfo: data })),
+  changeArrayToSort: (data: number[]) => set(() => ({ arrayToSort: data })),
+  changeBarsContSize: (data: barsContSize) => set(() => ({ barsContSize: data })),
+  setIsAnimationComplete: (data: boolean) => set(() => ({ animationComplete: data })),
   changeSelectedAlgorithm: (data: AlgorithmOptions) => set(() => ({ selectedAlgorithm: data }))
 }))

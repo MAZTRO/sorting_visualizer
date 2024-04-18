@@ -1,11 +1,11 @@
 import { AnimationArrayType } from 'src/utils/types'
 
-function partition (
+const partition = (
   array: number[],
   begin: number,
   finish: number,
   animations: AnimationArrayType
-) {
+) => {
   let i = begin
   let j = finish + 1
   const pivot = array[begin]

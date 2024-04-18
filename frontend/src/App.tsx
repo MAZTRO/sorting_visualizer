@@ -1,9 +1,8 @@
-import { Header } from 'components/header/Header'
 import { Bars } from 'components/bars/Bars'
+import { Header } from 'components/header/Header'
 import 'react-toastify/dist/ReactToastify.css'
 
 export const App = () => {
-  // bg-sa-darkPurple
   return (
     <main className='relative w-dvw h-dvh flex'>
       <div className='backgroundDegree absolute top-0 left-0 z[-1] h-dvh w-dvw bg-slate-950'>

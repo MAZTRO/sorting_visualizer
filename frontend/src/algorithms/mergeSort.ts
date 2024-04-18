@@ -1,12 +1,12 @@
 import { AnimationArrayType } from 'src/utils/types'
 
-function merge (
+const merge = (
   array: number[],
   begin: number,
   middle: number,
   finish: number,
   animations: AnimationArrayType
-) {
+) => {
   const left = array.slice(begin, middle)
   const right = array.slice(middle, finish)
 

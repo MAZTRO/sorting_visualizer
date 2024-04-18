@@ -3,29 +3,32 @@ export type SortingAlgorithmType =
   | 'insertion'
   | 'selection'
   | 'merge'
-  | 'quick'
-  | 'NA';
+  | 'quick';
 
-export type AnimationArrayType = [number[], boolean][];
 export type barsContSize = {x: number, y: number}
+export type AnimationArrayType = [number[], boolean][];
 export type AlgorithmOptions = { value: SortingAlgorithmType, label: string }
 
 export interface settingsStore {
-  arrayToSort: number[]
+  size: number
+  speed: number
+  maxSize: number
+  barWidth: number
+  openInfo: boolean
+  barHeight: number
   isSorting: boolean
+  arrayToSort: number[]
+  barsContSize: barsContSize
   animationComplete: boolean
   selectedAlgorithm: AlgorithmOptions
-  speed: number
-  size: number
-  barWidth: number
-  barHeight: number
-  barsContSize: barsContSize
-  changeSpeed: (speed: number) => void
   changeSize: (size: number) => void
-  changeBarsContSize: (data: barsContSize) => void
-  changeArrayToSort: (data: number[]) => void
+  changeSpeed: (speed: number) => void
   setIsSorting: (data: boolean) => void
-  setIsAnimationComplete: (data: boolean) => void
+  changeMaxSize: (data: number) => void
   changeBarWidth: (data: number) => void
+  changeOpneInfo: (data: boolean) => void
+  changeArrayToSort: (data: number[]) => void
+  changeBarsContSize: (data: barsContSize) => void
+  setIsAnimationComplete: (data: boolean) => void
   changeSelectedAlgorithm: (data: AlgorithmOptions) => void
 }

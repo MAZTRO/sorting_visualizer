@@ -1,5 +1,5 @@
-import { generateRandomNumberFromInterval } from 'src/utils/utils'
 import { barsContSize } from 'src/utils/types'
+import { generateRandomNumberFromInterval } from 'src/utils/utils'
 
 export const resetArrayAndAnimation = (
   barsContSize: barsContSize,
@@ -10,7 +10,7 @@ export const resetArrayAndAnimation = (
   changeBarWidth: (data: number) => void
 ) => {
   const tempArray: number[] = []
-  const widthLine = Math.floor((barsContSize.x - 500) / size)
+  const widthLine = Math.floor((barsContSize.x - (barsContSize.x * 0.1)) / size)
   const maxLineHeight = Math.max(barsContSize.y - 5, 100)
   for (let i = 0; i < size; i++) {
     tempArray.push(generateRandomNumberFromInterval(5, maxLineHeight))

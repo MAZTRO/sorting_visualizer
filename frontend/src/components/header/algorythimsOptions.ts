@@ -1,5 +1,5 @@
-import { AlgorithmOptions } from 'src/utils/types'
 import { StylesConfig } from 'react-select'
+import { AlgorithmOptions } from 'src/utils/types'
 
 export const options: AlgorithmOptions[] = [
   { value: 'bubble', label: 'Bubble Sort' },
