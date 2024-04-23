@@ -95,7 +95,7 @@ export const Header = () => {
   }
 
   return (
-    <header className='z-10 w-full m-auto my-0 flex flex-col'>
+    <header className='z-30 w-full m-auto my-0 flex flex-col'>
       <ToastContainer toastClassName={() => 'relative flex p-3 min-w-max min-h-10 rounded-md justify-between overflow-hidden cursor-pointer bg-sa-darkPurple border-sa-lightPurple border-[2px]'} />
       <h1 className='w-full text-center my-1 text-[18px] md:text-[30px] uppercase font-semibold'>Sorting Visualizer</h1>
       <section className='configContainer w-[90%] max-h-[35dvh] flex flex-wrap justify-center m-auto my-2 md:border-b md:border-sa-lightPurple pb-4 gap-5 overflow-visible'>
