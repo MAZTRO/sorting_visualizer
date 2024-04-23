@@ -17,7 +17,7 @@ export const AlgorithmData = () => {
         <div className='absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,0.5),rgba(255,255,255,0))]' />
         <div className='absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,0.3),rgba(255,255,255,0))]' />
       </div>
-      <button className='flex flex-col justify-center rounded-md bg-sa-lightPurple p-2 my-3 mx-auto z-20' onClick={() => changeOpneInfo(!openInfo)}>
+      <button className='flex flex-col justify-center rounded-md bg-sa-lightPurple p-2 my-3 mx-auto mr-[1%] z-20' onClick={() => changeOpneInfo(!openInfo)}>
         {
           openInfo
             ? <CloseIcon />

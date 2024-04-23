@@ -75,8 +75,8 @@ export const Bars = () => {
             ))
           }
         </section>
-        <AlgorithmData />
       </section>
+      <AlgorithmData />
     </section>
   )
 }
