@@ -40,7 +40,7 @@ export const Bars = () => {
   }, [size])
 
   return (
-    <section className='relative m-auto w-[90dvw] min-w-max h-full max-h-[50dvh] md:max-h-[60dvh] border-b-[5px] border-b-sa-lightPurple flex'>
+    <section className='relative m-auto w-[90dvw] min-w-max h-full max-h-[50dvh] md:max-h-[60dvh] border-b-[5px] border-b-sa-lightPurple flex z-10'>
       <section className='mesh relative w-full md:w-[calc(90% - 65ch)] h-full flex'>
         <Background />
         <section id='barsCont' className='barsCont relative w-[90%] h-full m-auto flex'>
@@ -75,8 +75,8 @@ export const Bars = () => {
             ))
           }
         </section>
+        <AlgorithmData />
       </section>
-      <AlgorithmData />
     </section>
   )
 }

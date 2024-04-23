@@ -1,30 +1,54 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Prerequisites:
 
-Currently, two official plugins are available:
+Node.js and npm, pnpm, yarn, etc, installed on your system. You can download them from the official Node.js website: https://nodejs.org/en
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation:
 
-## Expanding the ESLint configuration
+- Clone this repository:
+```
+Bash
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+$ git clone git@github.com:MAZTRO/sorting_visualizer.git
+```
+- Navigate to the project directory:
 
-- Configure the top-level `parserOptions` property like this:
+```
+Bash
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+$ cd sorting_visualizer
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Install dependencies:
+
+```
+Bash
+
+$ pnpm install
+```
+
+## Running the Application:
+
+- Start the development server:
+
+```
+Bash
+
+$ pnpm dev
+```
+This will start the server and open the application in your default web browser, typically at http://localhost:5000/.
+
+# Building for Production:
+
+Build the optimized production bundle:
+```
+Bash
+$ pnpm run build
+```
+This will create a production-ready build in the **/build/dist** folder.
+
+### Development:
+
+Code changes are automatically reflected in the browser without manual reloads during development mode (using pnpm run dev).
+Feel free to explore the codebase, modify components, and experiment with different sorting algorithms.

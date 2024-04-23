@@ -10,7 +10,7 @@ export const AlgorithmData = () => {
 
   return (
     <section
-      className='adCont absolute top-[1%] right-0 m-auto max-w-[60ch] flex flex-col z-20 overflow-hidden rounded-lg justify-center'
+      className='adCont absolute top-[1%] right-0 m-auto max-w-[60ch] flex flex-col z-50 overflow-hidden rounded-lg justify-center'
       style={{ border: `${openInfo ? '1px solid var(--color-lightPurple)' : 'none'}`, backgroundColor: `${openInfo ? 'var(--color-darkPurple)' : 'transparent'}` }}
     >
       <div className='relative h-full w-full z-10'>
